@@ -1,0 +1,266 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    /* background: linear-gradient(to bottom, #f8fbff, #e3fdfd); */
+    color: #333;
+}
+
+/* Container Styling */
+.bundle {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 20px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    max-width: 96%;
+    transition: transform 0.3s ease;
+}
+
+.bundle:hover {
+    transform: scale(1.02);
+}
+
+.bundle img {
+    flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.cont {
+    padding: 20px;
+    flex: 1;
+    text-align: center;
+}
+
+.cont h2 {
+    font-size: 1.8rem;
+    color: #2b6777;
+    margin-bottom: 15px;
+}
+
+.cont td {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    display: inline-block;
+    color: #2b6777;
+}
+
+.cont p {
+    font-size: 1rem;
+    color: #6a6a6a;
+}
+
+/* Writing Section */
+.writ h1 {
+    text-align: center;
+    margin: 40px 0; /* More vertical spacing for better layout */
+    font-size: 3rem; /* Larger font for emphasis */
+    color: #3c91e6; 
+    text-transform: uppercase;
+    background: linear-gradient(to right, #3c91e6, #4caf50); /* Vibrant gradient */
+    -webkit-background-clip: text; /* Clips the gradient to text */
+    -webkit-text-fill-color: transparent; /* Transparent fill for gradient effect */
+    letter-spacing: 2px; /* Improved spacing for readability */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.writ h2 {
+    font-size: 1.8rem; /* Slightly larger font size */
+    margin: 25px 0 15px; /* Balanced spacing */
+    color: #1a5665; /* Darker shade for better contrast */
+    font-weight: bold; /* Stronger emphasis */
+    border-bottom: 2px solid #3c91e6; /* Underline for distinction */
+    padding-bottom: 5px; /* Space between text and border */
+}
+
+.writ h3 {
+    font-size: 1.2rem; /* Slightly larger font size */
+    line-height: 1.8; /* Increased line height for readability */
+    color: #333; /* Darker color for better visibility */
+    margin-bottom: 20px; /* Extra spacing for cleaner separation */
+    text-indent: 20px; /* Indentation for a professional look */
+    text-align: justify; /* Aligns text for clean blocks */
+    font-family: 'Georgia', serif; /* Elegant font for paragraphs */
+}
+
+.writ i {
+    display: block;
+    margin-top: 15px; /* Spaced out for clarity */
+    font-style: italic;
+    color: #666; /* Softer color for secondary importance */
+    font-size: 1.1rem; /* Consistent with paragraph text size */
+    text-align: center; /* Aligns quotes or notes to the right */
+}
+
+.writ {
+    padding: 10px; /* Space inside the writing section */
+    border-radius: 10px; /* Rounded corners */
+
+}
+
+
+
+/* Reviews */
+.revi {
+    margin: 40px auto; /* Increased spacing for better layout */
+    padding: 25px; /* Comfortable padding for content */
+    background: linear-gradient(to bottom right, #ffffff, #eef2f3); /* Softer gradient for elegance */
+    border-radius: 20px; /* More pronounced round corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow for depth */
+    max-width: 85%; /* Slightly narrower for focus */
+    border: 1px solid #e0e0e0; /* Subtle border for structure */
+}
+
+.revi h1 {
+    font-size: 2.2rem; /* Slightly larger for emphasis */
+    color: #3c91e6; /* Vibrant blue for attention */
+    text-align: center;
+    margin-bottom: 25px; /* More spacing for balance */
+    font-family: 'Poppins', sans-serif; /* Modern font */
+    text-transform: uppercase; /* Distinctive header style */
+    letter-spacing: 1.5px; /* Added spacing for readability */
+}
+
+.revi .rating {
+    display: flex;
+    justify-content: center;
+    gap: 8px; /* Uniform spacing between stars */
+    margin: 15px 0; /* Balanced spacing around */
+}
+
+.revi .star {
+    font-size: 30px; /* Larger stars for impact */
+    margin: 0 3px; /* Consistent spacing */
+    color: #ffd700; /* Brighter gold for vibrancy */
+    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.2)); /* Adds a subtle glow */
+    transition: transform 0.3s ease; /* Animates on hover */
+}
+.revi .star:hover {
+    transform: scale(1.2); /* Slight enlargement on hover */
+}
+.revi p {
+    font-size: 1.1rem; /* Readable text size */
+    color: #4f4f4f; /* Soft gray for readability */
+    line-height: 1.8; /* Comfortable line spacing */
+    margin: 10px 0; /* Even spacing */
+    text-align: justify; /* Clean paragraph alignment */
+    font-family: 'Roboto', sans-serif; /* Modern, clean font */
+}
+.revi p i {
+    display: block;
+    margin-top: 5px; /* Extra spacing for emphasis */
+    font-size: 0.95rem; /* Slightly smaller for secondary info */
+    color: #888; /* Lighter gray for contrast */
+}
+
+/* Buttons */
+button {
+    background: #3c91e6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #2b6777;
+}
+
+/* Review Form Container */
+.review-form {
+    background: #f9f9f9;
+    padding: 30px;
+    margin: 40px auto;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+
+.review-form h2 {
+    font-size: 2rem;
+    color: #3c91e6; /* Matching the header color from previous CSS */
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.review-form label {
+    display: block;
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.review-form input,
+.review-form select,
+.review-form textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    margin: 10px 0 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.review-form input:focus,
+.review-form select:focus,
+.review-form textarea:focus {
+    border-color: #3c91e6; /* Focus border color */
+    outline: none;
+}
+
+.review-form button {
+    background: #3c91e6;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+
+.review-form button:hover {
+    background: #2b6777;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    .review-form {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .review-form h2 {
+        font-size: 1.8rem;
+    }
+
+    .review-form label {
+        font-size: 1rem;
+    }
+
+    .review-form input,
+    .review-form select,
+    .review-form textarea {
+        font-size: 0.95rem;
+    }
+
+    .review-form button {
+        font-size: 1rem;
+    }
+}
