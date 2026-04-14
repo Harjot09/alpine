@@ -1,0 +1,111 @@
+mavogqtdyzpfblys
+
+
+
+
+
+const handleRating = (e, name) => {
+        const rating = Number(e.target.value);
+        let ratings = JSON.parse(localStorage.getItem('ratings')) || {};
+
+        if (!ratings[name]) {
+            ratings[name] = { total: 0, count: 0 };
+        }
+
+        ratings[name].total += rating;
+        ratings[name].count += 1;
+
+        localStorage.setItem('ratings', JSON.stringify(ratings));
+        alert(`Thanks for rating ${name}!`);
+    };
+
+
+    const getAverageRating = (name) => {
+        const ratings = JSON.parse(localStorage.getItem('ratings')) || {};
+        if (!ratings[name]) return "No ratings yet";
+        const average = (ratings[name].total / ratings[name].count).toFixed(1);
+        return `Rating: ${average}/5`;
+    };
+<div className="rating">
+                        {[1, 2, 3, 4, 5].map(star => (
+                            <button key={star} value={star} onClick={(e) => handleRating(e, "Top 3 Plants For Beautiful Flowers")}>
+                                {star}★
+                            </button>
+                        ))}
+                    </div>
+
+
+
+                    const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+// Connect to MongoDB
+mongoose.connect('mongodb://localhost:27017/gardening', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
+    .then(() => console.log('Connected to MongoDB'))
+    .catch(err => console.error('Failed to connect to MongoDB', err));
+
+// Define Rating Schema
+const ratingSchema = new mongoose.Schema({
+    productName: { type: String, required: true },
+    total: { type: Number, default: 0 },
+    count: { type: Number, default: 0 },
+});
+
+const Rating = mongoose.model('Rating', ratingSchema);
+
+// API Route to submit rating
+app.post('/api/ratings', async (req, res) => {
+    const { productName, rating } = req.body;
+
+    if (!productName || !rating) {
+        return res.status(400).send('Product name and rating are required');
+    }
+
+    try {
+        let productRating = await Rating.findOne({ productName });
+
+        if (!productRating) {
+            productRating = new Rating({ productName });
+        }
+
+        productRating.total += rating;
+        productRating.count += 1;
+
+        await productRating.save();
+        res.status(200).send({ message: 'Rating submitted successfully!' });
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+// API Route to get average rating
+app.get('/api/ratings/:productName', async (req, res) => {
+    const productName = req.params.productName;
+
+    try {
+        const productRating = await Rating.findOne({ productName });
+
+        if (!productRating) {
+            return res.status(404).send('No ratings found for this product');
+        }
+
+        res.status(200).send(productRating);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+// Start the server
+const PORT = 5000;
+app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
